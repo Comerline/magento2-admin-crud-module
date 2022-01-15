@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Comerline_Company Module
+ *
+ * @category    Comerline
+ * @package     Comerline_Company
+ * @author      Comerline
+ *
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Comerline_Company::manager" title="Company" module="Comerline_Company" sortOrder="10" resource="Comerline_Company::manager"/>
+        <add id="Comerline_Company::add_row" title="Company" module="Comerline_Company" sortOrder="20" parent="Comerline_Company::manager" action="company/company" resource="Comerline_Company::add_row"/>
+    </menu>
+</config>

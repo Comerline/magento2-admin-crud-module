@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Comerline_Company Module
+ *
+ * @category    Comerline
+ * @package     Comerline_Company
+ * @author      Comerline
+ *
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Comerline\Company\Api\Data\CompanyInterface" type="Comerline\Company\Model\Company" />
+
+    <virtualType name="Comerline\Company\Model\ResourceModel\Company\Company\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">comerline_company</argument>
+            <argument name="resourceModel" xsi:type="string">Comerline\Company\Model\ResourceModel\Company</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="comerline_company_company_list_data_source" xsi:type="string">Comerline\Company\Model\ResourceModel\Company\Company\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

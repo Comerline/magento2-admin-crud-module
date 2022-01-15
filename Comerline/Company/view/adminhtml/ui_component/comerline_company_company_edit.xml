@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Comerline_Company Module
+ *
+ * @category    Comerline
+ * @package     Comerline_Company
+ * @author      Comerline
+ *
+ */
+-->
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">comerline_company_company_edit.company_form_data_source</item>
+            <item name="deps" xsi:type="string">comerline_company_company_edit.company_form_data_source</item>
+        </item>
+        <item name="label" xsi:type="string" translate="true">Lot</item>
+        <item name="layout" xsi:type="array">
+            <item name="type" xsi:type="string">tabs</item>
+        </item>
+        <item name="buttons" xsi:type="array">
+            <item name="back" xsi:type="string">Comerline\Company\Block\Adminhtml\Edit\Buttons\BackButton</item>
+            <item name="delete" xsi:type="string">Comerline\Company\Block\Adminhtml\Edit\Buttons\DeleteButton</item>
+            <item name="reset" xsi:type="string">Comerline\Company\Block\Adminhtml\Edit\Buttons\ResetButton</item>
+            <item name="save" xsi:type="string">Comerline\Company\Block\Adminhtml\Edit\Buttons\SaveButton</item>
+        </item>
+    </argument>
+    <dataSource name="company_form_data_source">
+        <argument name="dataProvider" xsi:type="configurableObject">
+            <argument name="class" xsi:type="string">Comerline\Company\Model\Company\DataProvider</argument>
+            <argument name="name" xsi:type="string">company_form_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">id</argument>
+            <argument name="requestFieldName" xsi:type="string">id</argument>
+        </argument>
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+                <item name="submit_url" path="*/*/edit" xsi:type="url"/>
+            </item>
+        </argument>
+    </dataSource>
+    <fieldset name="company">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="label" xsi:type="string" translate="true">Company</item>
+            </item>
+        </argument>
+        <field name="id">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="visible" xsi:type="boolean">false</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">company</item>
+                </item>
+            </argument>
+        </field>
+        <field name="comerline_id" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" translate="true" xsi:type="string">Comerline id</item>
+                    <item name="fit" xsi:type="boolean">false</item>
+                    <item name="sortOrder" xsi:type="string">10</item>
+                    <item name="source" xsi:type="string">company</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="fiscal_name" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" translate="true" xsi:type="string">Fiscal name</item>
+                    <item name="fit" xsi:type="boolean">false</item>
+                    <item name="sortOrder" xsi:type="string">20</item>
+                    <item name="source" xsi:type="string">company</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="vat_number" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" translate="true" xsi:type="string">Vat number</item>
+                    <item name="fit" xsi:type="boolean">false</item>
+                    <item name="sortOrder" xsi:type="string">30</item>
+                    <item name="source" xsi:type="string">company</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+    </fieldset>
+</form>
